@@ -126,8 +126,8 @@ nav .search-bar input[type="search"]{
     background: transparent;
     width: 50rem;
     margin-left: 1rem;
-    font-size: 00.9rem;
-    color: var(--color-dark);
+    font-size: 0.9rem;
+    color: var(--color-primary);
 }
 nav .search-bar input[type="search"]::placeholder{
     color:var(--color-gray);
