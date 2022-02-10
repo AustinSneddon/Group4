@@ -194,7 +194,7 @@ main .container i .notification-count{
     width: fit-content;
     border-radius: 0.8rem;
     padding: 0.1rem 0.4rem;
-    position: absolute;
+    position: relative;
     top: -1rem;
     right: -10.2rem;
 }
@@ -267,6 +267,17 @@ main .container i .notification-count{
 }
 
 /*=============================MIDDLE FEED====================================*/
+.homepage-container{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    padding: 500px;
+    display: grid;
+    grid-template-rows: auto;
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
+}
 .featured-container{
     display: flex;
     padding: var(--card-padding);
