@@ -293,7 +293,8 @@ main .container i .notification-count{
     text-align: center;
 }
 .card .title{
-    font-size: 18px;    
+    font-size: 18px;  
+    color: black;  
     font-weight: bold;
     text-align: top left;
 } 
