@@ -121,13 +121,10 @@ nav .search-bar{
     background: rgba(255, 255, 255, 0.575);;
     box-shadow: var(--background-box-shadow);
     backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-top: 1px solid rgba(255, 255, 255, 0.5);
-    border-left: 1px solid rgba(255, 255, 255, 0.5);
 }
 nav .search-bar input[type="search"]{
     background: transparent;
-    width: 30vw;
+    width: 50rem;
     margin-left: 1rem;
     font-size: 00.9rem;
     color: var(--color-dark);
