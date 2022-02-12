@@ -14,7 +14,7 @@
     --color-black: hsl(252, 30%, 10%);     
 
     --border-radius: 2rem;
-    --card-border-radius: 0.75rem;
+    --card-border-radius: 2rem;
     --btn-padding: 0.6rem 2rem;
     --search-padding: 0.6rem 1rem;
     --card-padding: 1rem;
@@ -58,6 +58,7 @@ body{
 img{
     display: block;
     width: 100%;
+    cursor: pointer;
 }
 .btn{
     display: inline-block;
@@ -87,8 +88,14 @@ img{
     color: var(--color-gray);
 }
 .product-list .card:hover{
-    box-shadow: 0px 4px 15px 0px var(--color-secondary);
-
+    box-shadow: 0px 4px 15px 0px var(--color-gray);
+    border-radius: 0.2rem;
+    transition: all 700ms ease;
+}
+.product-list .card img:hover{
+    box-shadow: 0px 15px 17px -14px var(--color-gray);
+    border-radius: 0.2rem;
+    transition: all 500ms ease;
 }
 .card .title:hover{
     color: var(--color-primary);
@@ -308,7 +315,7 @@ main .container i .notification-count{
 .card img{
     max-width: 100%;
     border-radius: var(--card-border-radius);
-    box-shadow: 0px 15px 17px -13px var(--color-gray);
+    
 }
 .card .text{
     padding-top: 2rem;
