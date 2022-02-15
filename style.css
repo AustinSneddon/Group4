@@ -14,7 +14,7 @@
     --color-black: hsl(252, 30%, 10%);     
 
     --border-radius: 2rem;
-    --card-border-radius: 2rem;
+    --card-border-radius: 1rem;
     --btn-padding: 0.6rem 2rem;
     --search-padding: 0.6rem 1rem;
     --card-padding: 1rem;
@@ -170,7 +170,7 @@ main .container i .notification-count{
     padding: 0.1rem 0.4rem;
     position: absolute;
     top: -0.2rem;
-    right: -0.3rem;
+    right: 0rem;
 }
 .left .sidebar{
     margin-top: 1rem;
@@ -326,10 +326,10 @@ main .container i .notification-count{
 }
 .button{
     background-color: var(--color-primary);
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-align: right;
     border: none;
-    padding: 1.2rem;
+    padding: 1rem;
     border-radius: var(--card-border-radius);
     font-weight: bold;
 }
@@ -347,9 +347,57 @@ main .container i .notification-count{
 }
 
 /*------------------------------------------Product Page-----------------------------------------------------------------------------------*/
+.product-page-container{
+    width: 75vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+}
+/*.product-page-container div{
+    border: 1px solid #000000;
+}*/
+.header{
+    grid-column-start: 1;
+    grid-column-end: 6;
+}
+.content-large{
+    display: flex;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
 
+    border-radius: var(--card-border-radius);
+    box-shadow: 10px 15px 17px -20px var(--color-gray);
+    
+}
+.content-large img{
+    max-width: 100%;
+    border-radius: var(--card-border-radius);
+}
+.content-small{
+    grid-column-start: 3;
+    grid-column-end: 6;
 
-
+    border-radius: var(--card-border-radius);
+    box-shadow: 0px 0px 25px -20px var(--color-black);
+    
+}
+.container .text{
+    padding-top: 1rem;
+    padding-left: 1rem;
+}
+.footer{
+    grid-column: 1/ span 5;
+    
+}
+    
 
 
 
