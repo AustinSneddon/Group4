@@ -349,8 +349,9 @@ main .container i .notification-count{
 /*------------------------------------------Product Page-----------------------------------------------------------------------------------*/
 .product-page-container{
     width: 75vw;
-    height: 100vh;
+    height: 80vh;
     display: grid;
+    position: relative;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 10px;
@@ -359,9 +360,7 @@ main .container i .notification-count{
     background-color: var(--color-white);
     border-radius: var(--border-radius);
 }
-/*.product-page-container div{
-    border: 1px solid #000000;
-}*/
+
 .header{
     grid-column-start: 1;
     grid-column-end: 6;
@@ -369,7 +368,7 @@ main .container i .notification-count{
 .content-large{
     display: flex;
     grid-row-start: 1;
-    grid-row-end: 3;
+    grid-row-end: 5;
     grid-column-start: 1;
     grid-column-end: 3;
 
@@ -383,20 +382,30 @@ main .container i .notification-count{
 }
 .content-small{
     grid-column-start: 3;
-    grid-column-end: 6;
+    grid-column-end: 8;
 
-    border-radius: var(--card-border-radius);
-    box-shadow: 0px 0px 25px -20px var(--color-black);
-    
+    border-radius: var(--card-border-radius);   
+}
+.content-buy{
+    grid-column-start: 4;
+    grid-column-end: 8;
 }
 .container .text{
     padding-top: 1rem;
     padding-left: 1rem;
 }
+h1{
+    font-size: 120px;
+    color: black;
+}
+/*
+.product-page-container div{
+    border: 1px solid #000000;
+}
 .footer{
     grid-column: 1/ span 5;
     
-}
+}*/
     
 
 
