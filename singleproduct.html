@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="style.css">
     <!--ICONS-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
+    <!--Javascript-->
+    <script src="dynamicstore.js" async>
+        var transtotal = document.getElementsByClassName('cartTotal')[0].innerText;
+        localStorage.setItem("checkTotal", transtotal)
+    </script>
 </head>
 <body>    
     <nav>
@@ -35,13 +40,13 @@
             <!----------------------------------------------left navbar------------------------------------------------->
             <div class="left">
                 <div class="sidebar">
-                    <a class="menu-item">
+                    <a class="menu-item" href="cart.html">
                         <span><i class="ui uil-shopping-cart"><small class="notification-count">5+</small></i></span><h3>Cart</h3>
                     </a>            
-                    <a class="menu-item active">
+                    <a class="menu-item" href="index.html">
                         <span><i class="uil uil-home"></i></span><h3>Home</h3>
                     </a>
-                    <a class="menu-item">
+                    <a class="menu-item" href="graphic-tshirt-page.html">
                         <span><i class="uil uil-shopping-bag"></i></span><h3>Products</h3>
                         <!-------------------------------Product Expansion Window----------------------------------------->
 
@@ -49,7 +54,8 @@
                                 <div>
                                     <div class="product-body">
                                         <b> Athletic </b>
-                                    </div>                                
+                                    </div>
+                                
                                 </div>
                                 <div>                               
                                     <div class="product-body">
@@ -74,6 +80,7 @@
                 </div>
             </div>
             <!--------------------------------------------Middle to right featured---------------------------------------------->
+           <div class="hompage-container">
             <div class="product-page-container">
                 <!--<div class="header">Gray T-Shirt</div>-->
                 <div class="content-large">
@@ -81,20 +88,25 @@
                 </div>                
                 <div class="content-small">
                     <div class="text">
-                    <h1>Gray T-Shirt<br></h1>                    
+                    <h1>Gray T-Shirt<br></h1> 
+                    </div>                   
                 </div>
                 <div class="content-small">
                     <h2> Desctiption <br> </h2>
                     <p>
                         An all cotton shirt made for casual ocassions.
+                        <br>
+                        <br>
+                        <br>
                     </p>
                 </div>
                 <div class="content-buy">
-                    <button class="button">
-                        <h2> Add to Cart </h2>
+                    <button class="addcart">
+                        <span>Add to Cart<i class="uil uil-shopping-cart"></i></span>
                     </button>
                 </div>                
             </div> 
+        </div>
         </div>
     </main>
   </body>

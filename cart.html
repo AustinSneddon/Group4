@@ -1,0 +1,357 @@
+<!--Temp might be better to put some of the page changes on the home page and 
+    turn this page into a checkout form[eg: name, add, phone, credit] 3
+    https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_checkout_form--> 
+
+
+
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Group 4 E-Commerce Website </title>
+    <!--StyleSheet-->
+    <link rel="stylesheet" href="cart-style.css">
+    <!--ICONS-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
+    <script src="dynamicstore.js" async>
+        var transtotal = document.getElementsByClassName('cartTotal')[0].innerText;
+        localStorage.setItem("checkTotal", transtotal)
+
+    </script>
+</head>
+<body>    
+    <nav>
+        <div class="container">
+            <h2 class="logo"> G4Project </h2>
+            <div class="search-bar">
+                <i class="uil uil-search"></i>
+                <input type="search" placeholder="Search for shirts">
+            </div>
+            <!--Top Nav bar -->
+           <!--- <div class="Home">
+                <label class="btn btn-primary" for="Go Home">
+<a href=index.html>Home</a></label>
+                <label class="btn btn-primary" for="Go Home">Products</label>
+                <label class="btn btn-primary" for="Go Home">Contact Us</label>
+            </div>-->
+            <div class="account-photo">
+                <img src="Images/account.png" width="20px">
+            </div>
+            </div>
+        </div>
+    </nav>
+    <!----------------------------------Main-------------------------------------->
+    <main>
+        <div class="container">
+            <!----------------------------------------------left navbar------------------------------------------------->
+            <div class="left">
+            <div class="sidebar">
+                <a class="menu-item active" href="cart.html">
+                    <span><i class="ui uil-shopping-cart"><small class="notification-count">5+</small></i></span><h3>Cart</h3>
+                </a>            
+                <a class="menu-item" href="index.html">
+                    <span><i class="uil uil-home"></i></span><h3>Home</h3>
+                </a>
+                <a class="menu-item" href="graphic-tshirt-page.html">
+                        <span><i class="uil uil-shopping-bag"></i></span><h3>Products</h3>
+                        <!-------------------------------Product Expansion Window----------------------------------------->
+
+                        <div class="product-popup">
+                            <div>
+                                <div class="product-body">
+                                    <b> Athletic </b>
+
+                                </div>
+                                
+                            </div>
+
+                            <div>                               
+                                <div class="product-body">
+                                    <b> Casual </b>
+                                </div>
+                            </div>
+
+                            <div>                               
+                                <div class="product-body">
+                                    <b> Formal </b>
+                                </div>
+                            </div>
+                        </div>
+                </a>
+                    <!----------------------End of Product Expansion Window--------------------------------------->
+                <a class="menu-item">
+                    <span><i class="uil uil-bookmark"></i></span><h3>For Later</h3>
+                </a>
+                <a class="menu-item">
+                    <span><i class="uil uil-envelope"></i></span><h3>Contact Us</h3>
+                </a>                
+            </div>
+            </div>
+
+
+<div class="center">
+
+<!------------------Product in Cart------------------>
+    <div class="hompage-container">
+
+            <section class="productincart-list">
+                <h2>Products In Cart</h2>
+                <div class="productincart-container">
+                    <div class="card"></div>   
+                </div>         
+            </section>
+    </div>
+
+</div>
+
+<!-------Total Checkout Cart--------------->
+
+	<section class="totalcheckout">
+		<h2>Total
+<span class="cartTotal" style="color:black">$0</span>
+		</h2>
+
+	<!--
+         <b>$84.95</b>
+        <p><a href="#">Product 1</a> <span class="price">$16.99</span></p>
+
+      <p><a href="#1">Product 2</a> <span class="price">$16.99</span></p>
+
+     <p><a href="#">Product 3</a> <span class="price">$16.99</span></p>
+
+      <p><a href="#">Product 4</a> <span class="price">$16.99</span></p>
+ 
+	<p><a href="#">Product 5</a> <span class="price">$16.99</span></p>
+
+onclick="window.location.href='checkout.html'"-->
+
+<input type="button"  value="Checkout" class="submitbtn" >
+<span class="total" style="color:black"><i class="ui uil-shopping-cart"></i></span>
+	</section>
+
+
+            </div>
+            <!--------------------------------------------Middle to right featured---------------------------------------------->
+           <div class="homepage-container">
+             <!--Feature Container #1-->
+             <div class="featured-container">            
+                <section class="product-list">
+                    <div class="section-header">
+                        <h2>Featured Shirts</h2>
+                    </div>
+
+                        <div class="product-container">
+                            <div class="card">
+                                <div class="details">
+                                    
+                                <img class="prodimg" src="Images/tshirtexample.jpg">
+                                                             
+                                    <span class="prodtitle">Gray T-Shirt</span>
+                                <br></br>    
+                                    <span class="prodprice">$16.99</span>
+                                <br></br>
+                                <button class="addcart" >
+                                    <span>Add to Cart<i class="uil uil-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="details">
+                                    
+                                <img class="prodimg" src="Images/tshirtexample2.jpg">
+                                                             
+                                    <span class="prodtitle">Stone Long-Sleeve</span>
+                                <br></br>    
+                                    <span class="prodprice">$19.99</span>
+                                <br></br>
+                                <button class="addcart" >
+                                    <span>Add to Cart<i class="uil uil-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="details">
+                                    
+                                <img class="prodimg" src="Images/tshirtexample3.jpg">
+                                                             
+                                    <span class="prodtitle">Black T-Shirt</span>
+                                <br></br>    
+                                    <span class="prodprice">$16.99</span>
+                                <br></br>
+                                <button class="addcart" >
+                                    <span>Add to Cart<i class="uil uil-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="details">
+                                    
+                                <img class="prodimg" src="Images/tshirtexample4.jpg">
+                                                             
+                                    <span class="prodtitle">Apricot T-Shirt</span>
+                                <br></br>    
+                                    <span class="prodprice">$16.99</span>
+                                <br></br>
+                                <button class="addcart" >
+                                    <span>Add to Cart<i class="uil uil-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                            </div>
+                        </div>       
+                </section>
+            </div>
+            <!--Featured Container #2-->
+            <div class="featured-container">            
+                <section class="product-list">
+                    <div class="section-header">
+                        <h2>New Arrivals for Women</h2>
+                    </div>
+            
+                        <div class="product-container">
+                            <div class="card">
+                                <div class="details">
+                                    
+                                <img class="prodimg" src="Images/tshirtexample5.jpg">
+                                                             
+                                    <span class="prodtitle">Gray T-Shirt</span>
+                                <br></br>    
+                                    <span class="prodprice">$16.99</span>
+                                <br></br>
+                                <button class="addcart" >
+                                    <span>Add to Cart<i class="uil uil-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                            </div>
+            
+                            <div class="card">
+                                <div class="details">
+                                    
+                                <img class="prodimg" src="Images/tshirtexample6.jpg">
+                                                             
+                                    <span class="prodtitle">Navy Blue T-Sleeve</span>
+                                <br></br>    
+                                    <span class="prodprice">$16.99</span>
+                                <br></br>
+                                <button class="addcart" >
+                                    <span>Add to Cart<i class="uil uil-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                            </div>
+            
+                            <div class="card">
+                                <div class="details">
+                                    
+                                <img class="prodimg" src="Images/tshirtexample7.jpg">
+                                                             
+                                    <span class="prodtitle">Terrible Pun T-Shirt</span>
+                                <br></br>    
+                                    <span class="prodprice">$16.99</span>
+                                <br></br>
+                                <button class="addcart" >
+                                    <span>Add to Cart<i class="uil uil-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                            </div>
+            
+                            <div class="card">
+                                <div class="details">
+                                    
+                                <img class="prodimg" src="Images/tshirtexample8.jpg">
+                                                             
+                                    <span class="prodtitle">Loose Vintage T-Shirt</span>
+                                <br></br>    
+                                    <span class="prodprice">$16.99</span>
+                                <br></br>
+                                <button class="addcart" >
+                                    <span>Add to Cart<i class="uil uil-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                            </div>  
+                        </div>      
+                </section>
+            </div>
+         
+             <!--Feautred Container #3-->
+             <div class="featured-container">            
+                <section class="product-list">
+                    <div class="section-header">
+                        <h2>Best Sellers</h2>
+                    </div>
+            
+                        <div class="product-container">
+                            <div class="card">
+                                <div class="details">
+                                    
+                                <img class="prodimg" src="Images/tshirtexample9.jpg">
+                                                             
+                                    <span class="prodtitle">Vintage Long</span>
+                                <br></br>    
+                                    <span class="prodprice">$16.99</span>
+                                <br></br>
+                                <button class="addcart" >
+                                    <span>Add to Cart<i class="uil uil-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                            </div>
+            
+                            <div class="card">
+                                <div class="details">
+                                    
+                                <img class="prodimg" src="Images/tshirtexample10.jpg">
+                                                             
+                                    <span class="prodtitle">Dark Gray V-Neck</span>
+                                <br></br>    
+                                    <span class="prodprice">$16.99</span>
+                                <br></br>
+                                <button class="addcart" >
+                                    <span>Add to Cart<i class="uil uil-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                            </div>
+            
+                            <div class="card">
+                                <div class="details">
+                                    
+                                <img class="prodimg" src="Images/tshirtexample11.jpg">
+                                                             
+                                    <span class="prodtitle">Blue Polo</span>
+                                <br></br>    
+                                    <span class="prodprice">$16.99</span>
+                                <br></br>
+                                <button class="addcart" >
+                                    <span>Add to Cart<i class="uil uil-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                            </div>
+            
+                            <div class="card">
+                                <div class="details">
+                                    
+                                <img class="prodimg" src="Images/tshirtexample12.jpg">
+                                                             
+                                    <span class="prodtitle">JBurgandy Long-Sleeve</span>
+                                <br></br>    
+                                    <span class="prodprice">$19.99</span>
+                                <br></br>
+                                <button class="addcart" >
+                                    <span>Add to Cart<i class="uil uil-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                            </div>
+                        </div>       
+                </section>
+            </div>
+
+
+
+            </div>
+        </div>        
+    </main>
+</body>
+</html>
+

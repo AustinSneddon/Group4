@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:root{
+    --color-white: hsl(252, 30%, 100%); 
+    --color-light: hsl(252, 30%, 95%); 
+    --color-gray: hsl(252, 15%, 65%); 
+    /*--color-primary: hsl(252, 75%, 60%); 
+    --color-secondary: hsl(252, 100%, 90%); */
+    --color-primary: hsl(197, 75%, 60%); 
+    --color-secondary: hsl(197, 100%, 90%); 
+    --color-success: hsl(120, 95%, 65%); 
+    --color-danger: hsl(0, 95%, 65%); 
+    --color-dark: hsl(252, 30%, 17%); 
+    --color-black: hsl(252, 30%, 10%);     
+
+    --border-radius: 2rem;
+    --card-border-radius: 1rem;
+    --btn-padding: 0.6rem 2rem;
+    --search-padding: 0.6rem 1rem;
+    --card-padding: 1rem;
+
+    --sticky-top-left: 5.4rem;
+    --sticky-top-right: -18rem;
+    
+    --background-blur: rgba(255, 255, 255, 0.8);
+    --background-box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.loginPage {
+    height: 100%;
+    width: 100%;
+    background-image: url("Images/purpleWallpaper.jpeg");
+    background-blend-mode: overlay;
+    position: absolute;
+}
+.formBox {
+    width: 380px;
+    height: 380px;
+    position: relative;
+    margin: 6% auto;
+    border-radius: var(--card-border-radius);
+    padding: 5px;
+    overflow: hidden;
+
+
+    background: var(--background-blur);
+    box-shadow: var(--background-box-shadow);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+.buttonContainer {
+    width: 210px;
+    margin: 40px 80px;
+    position: relative;
+    box-shadow: 0 0 10px 4px var(--color-secondary);
+    border-radius: var(--border-radius);
+}
+.toggle-btn{
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+#btn{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+    border-radius: var(--card-border-radius);
+    transition: .5s;
+}
+.inputGroup{
+    top:140px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+.inputField{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0 -4px 0;
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid var(--color-primary);
+    outline: none;
+    background: transparent;
+}
+.submitButton{
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: 25px auto;
+    background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+    border: 0px;
+    outline: none;
+    border-radius: var(--card-border-radius);
+}
+#login{
+    left: 50px;
+}
+#register{
+    left: 450px;
+}
+/*
+
+
+   
+
+
+*/

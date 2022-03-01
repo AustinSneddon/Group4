@@ -1,0 +1,300 @@
+<!----Checkout Form 
+
+Based on w3schools css checkout form -->
+
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Group 4 E-Commerce Website </title>
+    <!--StyleSheet-->
+    <link rel="stylesheet" href="style.css">
+    <!--ICONS-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
+    <script src="dynamicstore.js" async>
+        localStorage.getItem('checkTotal');
+        document.getElementsByClassName('checkoutTotal')[0].innerText = transtotal;
+        console.log(transtotal);
+
+    </script>
+</head>
+<body>    
+    <nav>
+        <div class="container">
+            <h2 class="logo"> G4Project </h2>
+            <div class="search-bar">
+                <i class="uil uil-search"></i>
+                <input type="search" placeholder="Search for shirts">
+            </div>
+            <div class="Home">
+                <label class="btn btn-primary" for="Go Home">
+<a href=index.html>Home</a></label>
+                <label class="btn btn-primary" for="Go Home">Products</label>
+                <label class="btn btn-primary" for="Go Home">Contact Us</label>
+            </div>
+            <div class="account-photo">
+                <img src="Images/account.png" width="20px">
+            </div>
+            </div>
+        </div>
+    </nav>
+    <!----------------------------------Main-------------------------------------->
+    <main>
+        <div class="container">
+            <!----------------------------------------------left navbar------------------------------------------------->
+            <div class="left">
+            <div class="sidebar">
+                
+                <a class="menu-item" href=cart.html>
+                    <span><i class="ui uil-shopping-cart"><small class="notification-count">5+</small></i></span><h3>Cart</h3>
+                </a>            
+                <a class="menu-item" href=index.html>
+                    <span><i class="uil uil-home"></i></span><h3>Home</h3>
+                </a>
+                <a class="menu-item">
+                        <span><i class="uil uil-shopping-bag"></i></span><h3>Products</h3>
+                        <!-------------------------------Product Expansion Window----------------------------------------->
+
+                        <div class="product-popup">
+                            <div>
+                                <div class="product-body">
+                                    <b> Athletic </b>
+
+                                </div>
+                                
+                            </div>
+
+                            <div>                               
+                                <div class="product-body">
+                                    <b> Casual </b>
+                                </div>
+                            </div>
+
+                            <div>                               
+                                <div class="product-body">
+                                    <b> Formal </b>
+                                </div>
+                            </div>
+                        </div>
+                </a>
+                    <!----------------------End of Product Expansion Window--------------------------------------->
+                <a class="menu-item">
+                    <span><i class="uil uil-bookmark"></i></span><h3>For Later</h3>
+                </a>
+                <a class="menu-item">
+                    <span><i class="uil uil-envelope"></i></span><h3>Contact Us</h3>
+                </a>                
+            </div>
+            </div>
+
+
+<div class="center">
+<h2>Checkout</h2>
+<p>Please enter payment and billing information to checkout.<p>
+<div class="ctform">
+  <div class="form">
+    <div class="container">
+      <form action="/action_page.php">
+      
+        <div class="ctform">
+          <div class="billpay">
+            <h3>Billing Address</h3>
+            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="john@example.com">
+            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+            <label for="city"><i class="fa fa-institution"></i> City</label>
+            <input type="text" id="city" name="city" placeholder="New York">
+
+            <div class="ctform">
+              <div class="billpay">
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" placeholder="NY">
+              </div>
+              <div class="billpay">
+                <label for="zip">Zip</label>
+                <input type="text" id="zip" name="zip" placeholder="10001">
+              </div>
+            </div>
+          </div>
+
+
+          <div class="billpay">
+            <h3>Payment</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+            <label for="ccnum">Credit card number</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+            <label for="expmonth">Exp Month</label>
+            <input type="text" id="expmonth" name="expmonth" placeholder="September">
+            <div class="ctform">
+              <div class="billpay">
+                <label for="expyear">Exp Year</label>
+                <input type="text" id="expyear" name="expyear" placeholder="2018">
+              </div>
+              <div class="billpay">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="352">
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <label>
+          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+        </label>
+        <input type="submit" value="Submit" class="btn">
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+<div class="right">
+<!-------Total Checkout Cart--------------->
+
+	<section class="totalcheckout">
+		<h2>Total
+<span id="checkoutTotal" style="color:black" >$0</span>
+		</h2>
+
+<!--	<p><a href="#">Product 1</a> <span class="price">$16.99</span></p>
+
+      <p><a href="#">Product 2</a> <span class="total">$16.99</span></p>
+
+     <p><a href="#">Product 3</a> <span class="total">$16.99</span></p>
+
+      <p><a href="#">Product 4</a> <span class="total">$16.99</span></p>
+ 
+	<p><a href="#">Product 5</a> <span class="total">$16.99</span></p>
+
+<h3>Checkout <span class="total" style="color:black"><span><i class="ui uil-shopping-cart"></i></span></span></h3>-->
+
+
+	</section>
+
+
+            </div>
+</div>
+            <!--------------------------------------------Middle to right featured---------------------------------------------->
+           <div class="main-container">
+
+<!------------------Product in Cart-----------------
+
+            <section class="productincart-list">
+                <h2>Products In Cart</h2>
+                <div class="productincart-container">
+--Product One--
+                <div class="card">
+                    <div class="title">Black Shirt</div>
+                        <div class="image">
+                            <img src="Images/tshirtexample.jpg">
+                        </div>
+                        <div class="text">$16.99</div>
+                        <button class="bookmark">
+                            <span><i class="uil uil-bookmark"></i></span>
+                        </button>
+                </div>            
+             =--Product Two-
+                <div class="card">
+                    <div class="title">Gray Shirt</div>
+                        <div class="image">
+                            <img src="Images/tshirtexample.jpg">
+                        </div>
+                        <div class="text">$16.99</div>
+                        <button class="bookmark">
+                            <span><i class="uil uil-bookmark"></i></span>
+                        </button>
+                </div>
+            -Product Three-
+            <div class="card">
+                <div class="title">Blue Shirt</div>
+                    <div class="image">
+                        <img src="Images/tshirtexample.jpg">
+                    </div>
+                    <div class="text">$16.99</div>
+                    <button class="bookmark">
+                        <span><i class="uil uil-bookmark"></i></span>
+                    </button>
+            </div>
+            Product Four-
+            <div class="card">
+                <div class="title">Red Shirt</div>
+                    <div class="image">
+                        <img src="Images/tshirtexample.jpg">
+                    </div>
+                    <div class="text">$16.99</div>
+                    <button class="bookmark">
+                        <span><i class="uil uil-bookmark"></i></span>
+
+                    </button>
+				</div>
+         Product Five-
+            <div class="card">
+                <div class="title">Tan Shirt</div>
+                    <div class="image">
+                        <img src="Images/tshirtexample.jpg">
+                    </div>
+                    <div class="text">$16.99</div>
+                    <button class="bookmark">
+                        <span><i class="uil uil-bookmark"></i></span>
+                    </button>
+				</div>
+            Product Six
+            <div class="card">
+                <div class="title">Black Shirt</div>
+                    <div class="image">
+                        <img src="Images/tshirtexample.jpg">
+                    </div>
+                    <div class="text">$16.99</div>
+                    <button class="bookmark">
+                        <span><i class="uil uil-bookmark"></i></span>
+                    </button>
+				</div>
+            Product Seven-
+            <div class="card">
+                <div class="title">Green Shirt</div>
+                    <div class="image">
+                        <img src="Images/tshirtexample.jpg">
+                    </div>
+                    <div class="text">$16.99</div>
+                    <button class="bookmark">
+                        <span><i class="uil uil-bookmark"></i></span>
+                    </button>
+				</div>
+<br></br>
+            Product Eight-
+            <div class="card">
+                <div class="title">Tie Dye Shirt</div>
+                    <div class="image">
+                        <img src="Images/tshirtexample.jpg">
+                    </div>
+                    <div class="text">$16.99</div>
+                    <button class="bookmark">
+                        <span><i class="uil uil-bookmark"></i></span>
+                    </button>
+				</div>
+
+
+
+
+            </div>
+            </section>
+        -->
+            </div>
+        </div>        
+    </main>
+</body>
+</html>
+
+
