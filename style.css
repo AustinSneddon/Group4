@@ -22,8 +22,8 @@
     --sticky-top-left: 5.4rem;
     --sticky-top-right: -18rem;
     
-    --background-blur: rgba(255, 255, 255, 0.336);
-    --background-box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    --background-blur: rgba(255, 255, 255, 0.589);
+    --background-box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 *,*
 ::before, 
@@ -39,9 +39,12 @@
 body{
     font-family: 'Poppins', sans-serif;
     color: var(--color-dark);
-    background: var(--color-light);
+    /*background-color: var(--color-light);*/
+    background-image: url("Images/purpleWallpaper.jpeg");
+    background-attachment: fixed;
     overflow-x: hidden;
 }
+
 
 /*==========General Styles========*/
 
@@ -87,31 +90,19 @@ img{
 .text-muted{
     color: var(--color-gray);
 }
-.product-list .card:hover{
-    box-shadow: 0px 4px 15px 0px var(--color-gray);
-    border-radius: 0.2rem;
-    transition: all 700ms ease;
-}
-.product-list .card img:hover{
-    box-shadow: 0px 15px 17px -14px var(--color-gray);
-    border-radius: 0.2rem;
-    transition: all 500ms ease;
-}
-.card .title:hover{
-    color: var(--color-primary);
-}
+
 /*=========================NAVBAR======================= */
 
 nav{
     width: 100%;
     background: var(--background-blur);
     box-shadow: var(--background-box-shadow);
+    backdrop-filter: blur(10px);
     padding: 0.7rem 0;
     position: fixed;
     top: 0;
     z-index: 10;
     border-radius: 20px;
-    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     border-left: 1px solid rgba(255, 255, 255, 0.5);
@@ -181,8 +172,10 @@ main .container i .notification-count{
 /*=======================SIDE-BAR============================*/
 .left .sidebar{
     margin-top: 1rem;
-    background: var(--color-white);
+    background: var(--background-blur);
+    box-shadow: var(--background-box-shadow);
     border-radius: var(--card-border-radius);
+    backdrop-filter: blur(10px);
 }
 .left .sidebar .menu-item{
     display: flex;
@@ -193,7 +186,7 @@ main .container i .notification-count{
     position: relative;
 }
 .left .sidebar .menu-item:hover{
-    background: var(--color-light);
+    background: var(--color-white);
 }
 .left .sidebar i {
     font-size: 1.4rem;
@@ -270,6 +263,8 @@ main .container i .notification-count{
     display: block;
     background: var(--background-blur);
     box-shadow: var(--background-box-shadow);
+    border-radius: var(--card-border-radius);
+    backdrop-filter: blur(10px);
     position: absolute;
     left: -0.6rem;
     transform: rotate(45deg);
@@ -302,7 +297,10 @@ main .container i .notification-count{
 }
 .product-list{
     padding: 2em;
-    background: var(--color-white);
+    background: var(--background-blur);
+    box-shadow: var(--background-box-shadow);
+    border-radius: var(--card-border-radius);
+    backdrop-filter: blur(10px);
     border-radius: var(--card-border-radius);
 }
 .product-list .section-header{
@@ -355,7 +353,19 @@ main .container i .notification-count{
     column-gap: 2rem;
     position: relative;
 }
-
+.product-list .card:hover{
+    box-shadow: 0px 4px 15px 0px var(--color-primary);
+    border-radius: 0.2rem;
+    transition: all 700ms ease;
+}
+.product-list .card img:hover{
+    box-shadow: 0px 15px 17px -14px var(--color-gray);
+    border-radius: 0.2rem;
+    transition: all 500ms ease;
+}
+.card .title:hover{
+    color: var(--color-primary);
+}
 /*------------------------------------------Product Page-----------------------------------------------------------------------------------*/
 .product-page-container{
     display: flex;
@@ -368,6 +378,9 @@ main .container i .notification-count{
     padding: 15px;
     box-sizing: border-box;
     background-color: var(--color-white);
+    background: var(--background-blur);
+    box-shadow: var(--background-box-shadow);
+    backdrop-filter: blur(30px);
     border-radius: var(--border-radius);
 }
 .header{
