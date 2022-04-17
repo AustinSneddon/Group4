@@ -13,16 +13,16 @@
                 <button type="button" class="toggle-btn" onclick="login()">Login</button>
                 <button type="button" class="toggle-btn" onclick="register()">Register</button>
             </div>
-            <form id="login" class="inputGroup">
-                <input type="text" class="inputField" placeholder="Username" required>
-                <input type="text" class="inputField" placeholder="Password" required>
+            <form id="login" action="includes/login.inc.php" method="" class="inputGroup">
+                <input name="name" input type="text" class="inputField" placeholder="Username" required>
+                <input name="pwd" input type="password" class="inputField" placeholder="Password" required>
                 <button type="submit" class="submitButton">Login</button>
             </form>
-            <form id="register" action="connect.php" method ="POST" class="inputGroup">
-                <input name="email" type="email" class="inputField" placeholder="Email" required>
-                <input name="fullName" type="text" class="inputField" placeholder="Username" required>
-                <input name="password" type="text" class="inputField" placeholder="Password" required>
-                <button type="submit" class="submitButton">Register</button>
+            <form id="register" action="includes/signup.inc.php" method ="POST" class="inputGroup">
+                <input type="email" name="email"class="inputField" placeholder="Email" required>
+                <input type="text" name="fullName"class="inputField" placeholder="Username" required>
+                <input type="password" name="pwd" class="inputField" placeholder="Password" required>
+                <button type="submit" name="submit" class="submitButton">Register</button>
             </form>
         </div>
     </div>
