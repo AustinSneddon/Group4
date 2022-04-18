@@ -74,7 +74,7 @@ function createUser($conn, $fullName, $email, $password){
         echo "New account added successfully";
 
     mysqli_stmt_close($stmt);
-    header("location: ../index.html?error=stmtfailed");
+    header("location: ../index.html");
 }
 
 
