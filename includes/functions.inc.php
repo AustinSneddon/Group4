@@ -60,12 +60,28 @@ function emailExists($conn, $email){
     }
     mysqli_stmt_close($stmt);
 }
+
 function createUser($conn, $fullName, $email, $password){
-    /*
     $email = $_POST['email'];
     $fullName = $_POST['fullName'];
-    $password = $_POST['password'];
-    */ 
+    $password = $_POST['pwd'];
+
+    $SELECT = "SELECT email From test Where email = ? Limit 1";
+    $INSERT = "INSERT Into test (email, fullName, pwd) values(?, ?, ?)";
+        $stmt = $conn->prepare($INSERT);
+        $stmt->bind_param("sss", $email, $fullName, $password);
+        $stmt->execute();
+        echo "New account added successfully";
+
+    mysqli_stmt_close($stmt);
+    header("location: ../index.html?error=stmtfailed");
+}
+
+
+/* OLD PHP FOR ADDING A USER
+    $email = $_POST['email'];
+    $fullName = $_POST['fullName'];
+    $password = $_POST['pwd'];
 
     $SELECT = "SELECT email From test Where email = ? Limit 1";
     $INSERT = "INSERT Into test (email, fullName, pwd) values(?, ?, ?)";
@@ -89,37 +105,4 @@ function createUser($conn, $fullName, $email, $password){
     }
     mysqli_stmt_close($stmt);
     header("location: ../index.html?error=stmtfailed");
-}
-
-
-/* OLD PHP FOR ADDING A USER
-$email = $_POST['email'];
-$fullName = $_POST['fullName'];
-$password = $_POST['password'];
-
-$SELECT = "SELECT email From test Where email = ? Limit 1";
-$INSERT = "INSERT Into test (email, fullName, password) values(?, ?, ?)";
-
-$stmt = $conn->prepare($SELECT);
-$stmt->bind_param("s", $email);
-$stmt->execute();
-$stmt->bind_result($email);
-$stmt->store_result();
-$rnum = $stmt->num_rows;
-
-if($rnum==0){
-    $stmt->close();
-    $stmt = $conn->prepare($INSERT);
-    $stmt->bind_param("sss", $email, $fullName, $password);
-    $stmt->execute();
-    echo "New account added successfully";
-}
-else{
-    echo "Sorry, this email has already been taken.";
-}
-}
-header ('Location: index.html');
-$mysqli -> close();
-exit;
-
 */
