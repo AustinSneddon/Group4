@@ -7,7 +7,7 @@ if (isset($_POST["submit"])) {
     $password = $_POST['pwd'];
 
     require_once 'dbh.inc.php';
-    require_once 'functions.inc.php';
+    //require_once 'functions.inc.php';
     /*
     if (emptyInputSignup($email, $fullName, $password) !== false) {
         header("location: ../login.html?error=emptyinput");
@@ -25,5 +25,13 @@ if (isset($_POST["submit"])) {
         $sql = "SELECT * From test Where email = ?;";
     }
     */
-    createUser($conn, $email, $fullName, $password);
+    $SELECT = "SELECT email From test Where email = ? Limit 1;";
+    $INSERT = "INSERT Into test (email, fullName, pwd) values(?, ?, ?);";
+        $stmt = $conn->prepare($INSERT);
+        $stmt->bind_param("sss", $email, $fullName, $password);
+        $stmt->execute();
+        echo "New account added successfully";
+
+    mysqli_stmt_close($stmt);
+    header("location: ../index.html");
 }
