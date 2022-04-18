@@ -13,10 +13,10 @@ if (!$conn) {
 else{
 $email = $_POST['email'];
 $fullName = $_POST['fullName'];
-$password = $_POST['password'];
+$password = $_POST['pass'];
 
 $SELECT = "SELECT email From test Where email = ? Limit 1";
-$INSERT = "INSERT Into test (email, fullName, password) values(?, ?, ?)";
+$INSERT = "INSERT Into test (email, fullName, pass) values(?, ?, ?)";
 
 $stmt = $conn->prepare($SELECT);
 $stmt->bind_param("s", $email);
