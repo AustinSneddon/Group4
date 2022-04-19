@@ -7,36 +7,29 @@ $password = "UNC-Group4!";
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $database);
 // Check connection
-if (!$conn) {
+if ($conn == false) {
     die("Connection failed: " . mysqli_connect_error());
 }
 else{
-$email = $_POST['email'];
-$fullName = $_POST['fullName'];
-$password = $_POST['pass'];
 
-$SELECT = "SELECT email From test Where email = ? Limit 1";
-$INSERT = "INSERT Into test (email, fullName, pass) values(?, ?, ?)";
-
-$stmt = $conn->prepare($SELECT);
-$stmt->bind_param("s", $email);
-$stmt->execute();
-$stmt->bind_result($email);
-$stmt->store_result();
-$rnum = $stmt->num_rows;
-
-if($rnum==0){
-    $stmt->close();
-    $stmt = $conn->prepare($INSERT);
-    $stmt->bind_param("sss", $email, $fullName, $password);
-    $stmt->execute();
-    echo "New account added successfully";
+    $sql = "INSERT INTO test (email, fullName, password) VALUES (?, ?, ?)";
+    
+    if($stmt = mysqli_prepare($conn, $sql)){
+        mysqli_stmt_bind_param($stmt, "sss", $email, $fullName, $password);
+        
+        $email = $_POST['email'];
+        $fullName = $_POST['fullName'];
+        $password = $_POST['pass'];
+        
+        mysqli_stmt_execute($stmt);
+        
+        echo "New account added successfully";
+    }
+    else{
+    echo "ERROR: Could not prepare query: $sql. " . mysqli_error($conn);
+    }
 }
-else{
-    echo "Sorry, this email has already been taken.";
-}
-}
+mysqli_stmt_close($stmt);
+mysqli_close($conn);
 header ('Location: index.html');
-$mysqli -> close();
-exit;
 ?>

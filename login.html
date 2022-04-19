@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="log-in-styles.css">
@@ -14,13 +13,13 @@
                 <button type="button" class="toggle-btn" onclick="register()">Register</button>
             </div>
             <form id="login" method="" class="inputGroup">
-                <input name="name" input type="text" class="inputField" placeholder="Username" required>
-                <input name="pwd" input type="password" class="inputField" placeholder="Password" required>
+                <input name="name" type="text" class="inputField" placeholder="Username" required>
+                <input name="pwd" type="password" class="inputField" placeholder="Password" required>
                 <button type="submit" class="submitButton">Login</button>
             </form>
             <form id="register" action="connect.php" method ="POST" class="inputGroup">
-                <input type="email" name="email"class="inputField" placeholder="Email" required>
-                <input type="text" name="fullName"class="inputField" placeholder="Username" required>
+                <input type="text" name="email" class="inputField" placeholder="Email" required>
+                <input type="text" name="fullName" class="inputField" placeholder="Username" required>
                 <input type="password" name="pass" class="inputField" placeholder="Password" required>
                 <button type="submit" name="submit" class="submitButton">Register</button>
             </form>
@@ -42,5 +41,5 @@
             z.style.left = "110px";
         }
     </script>
-</body>
+    </body>
 </html>
