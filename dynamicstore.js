@@ -1,7 +1,28 @@
+
+
 if (document.readyState == 'loading') {
     document.addEventListener('DOMContentLoaded', ready)
 } else {
     active()
+}
+
+/*Calls the getfunction when new page loads
+****IMPORTANT MUST GET INFO AFTER!!! NEW PAGE LOAD*****/
+
+window.onload = function dt()
+{   console.log(window.location.href)
+    if(window.location.href == 'file:///C:/Users/iploe/Documents/Senior%20CIS/Group4-main-Admin-Build/Group4-main/cart.html')
+    {
+        productincartupdate()
+    }
+
+    if (window.location.href == 'file:///C:/Users/iploe/Documents/Senior%20CIS/Group4-main-Admin-Build/Group4-main/checkout.html')
+    { 
+        checkouttotalupdate()
+    }
+
+
+    
 }
 
 function active()
@@ -25,6 +46,13 @@ var addcartitem = document.getElementsByClassName('addcart')
 for (var i = 0; i < addcartitem.length; i++) {
     var button = addcartitem[i]
     button.addEventListener('click', addToCartClicked)
+}
+//addsproduct to session storage for the cart
+var addcartitemstorage = document.getElementsByClassName('addcartstorage')
+for (var i = 0; i < addcartitemstorage.length; i++) {
+    var button = addcartitemstorage[i]
+    button.addEventListener('click', addproductstorage)
+    
 }
 
 var submittocheckout = document.getElementsByClassName('submitbtn')
@@ -162,25 +190,58 @@ function addtotalStorage(event)
 
 
 }
+/*Add product price and title to storage*/
+function addproductstorage(event)
+{
+    var cartitemcounter = +1
+    var ttitle = document.getElementsByClassName("prodtitle")[0].innerText
 
-/*Calls the getfunction when new page loads
-****IMPORTANT MUST GET INFO AFTER!!! NEW PAGE LOAD*****/
-window.onload = function dt()
-{   console.log(window.location.href)
-    if (window.location.href == 'file:///C:/Users/iploe/Documents/Senior%20CIS/Website/checkout.html')
-    { 
-        checkouttotalupdate()
+    var tprice = document.getElementsByClassName("prodprice")[0].innerText
+    var timg = document.getElementsByClassName("prodimg")[0].src
+
+    console.log(ttitle,tprice,timg)
+
+    if(isNaN(ttitle, tprice))
+    {
+        sessionStorage.setItem('pTtitle', ttitle )
+        sessionStorage.setItem('ptprice', tprice)
+        sessionStorage.setItem('ptimg', timg)
+        sessionStorage.setItem('cartcounter', cartitemcounter)
+        
     }
-    
+    window.location.href = 'cart.html'
 }
 
+
+
+function productincartupdate()
+{
+    if ( window.location.href == 'file:///C:/Users/iploe/Documents/Senior%20CIS/Group4-main-Admin-Build/Group4-main/cart.html')
+    {
+        var ctitle = window.sessionStorage.getItem('pTtitle')
+        var cprice = window.sessionStorage.getItem('ptprice')
+        var cimg = window.sessionStorage.getItem('ptimg')
+        var cic = window.sessionStorage.getItem('cartcounter')
+
+
+        console.log(ctitle, cprice, cimg, cic)
+
+        if(!null == (cic))
+        {
+        addItemToCart(ctitle,cprice,cimg)
+        }
+       
+
+        updateCartTotal()
+    }
+}
 
 /*Retrieves data if the correct page is loaded*/
 function checkouttotalupdate() 
 { 
    
 
-    if ( window.location.href == 'file:///C:/Users/iploe/Documents/Senior%20CIS/Website/checkout.html')
+    if ( window.location.href == 'file:///C:/Users/iploe/Documents/Senior%20CIS/Group4-main-Admin-Build/Group4-main/checkout.html')
     {
 
     

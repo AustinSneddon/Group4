@@ -1,13 +1,13 @@
 // Sidebar
-const menueItems = document.querySelectorAll('menu-item');
+const menuItems = document.querySelectorAll('.menu-item');
 
 //remove active class from all menu items
 const changeActiveItem = () => {
-    menueItems.forEach(item =>{
+    menuItems.forEach(item =>{
         item.classList.remove('active');
     })
 }
-menueItems.forEach(item => {
+menuItems.forEach(item => {
     item.addEventListener('click', () => {
         changeActiveItem();
         item.classList.add('active');
@@ -21,4 +21,3 @@ menueItems.forEach(item => {
         }
     })
 })
-

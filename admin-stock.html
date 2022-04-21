@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="style.css">
     <!--ICONS-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
+    <script src="dynamicstore.js" async>
+ 
+    </script>
 </head>
 <body>    
     <nav>
@@ -29,24 +32,26 @@
             </div>
         </div>
     </nav>
-    <!------------------------------------Main-------------------------------------->
+    <!------------------------------------Main------------------------------------>
     <main>
-        <div class="container">
-            <!----------------------------------------------left navbar------------------------------------------------->
+       <div class="container">
+        <!-- ------------------------------------------left navbar-------------------------------------->
             <div class="left">
                 <div class="sidebar">
-                    <a class="menu-item" href="####">
+                    <a class="menu-item" href="admin-accounts.html">
                         <span><i class="ui uil-envelope"></i></span><h3>Manage Accounts</h3>
                     </a>
-                    <a class="menu-item active" href="#####">
-                        <span><i class="uil uil-shopping-bag"></i></span><h3>Manage Stock</h3>               
+                    <a class="menu-item active" href="admin-stock.html">
+                        <span><i class="uil uil-shopping-bag"></i></span><h3>Manage Stock</h3>
+                    </a>              
                 </div>
             </div>
-        <div class="hompage-container">
-            <!--Inforamtion Section-->
+        </div>    
+         <div class="homepage-container">
+          <!-- Information Section-->
                 <div class="featured-container">
-                    <table>
-                        <tr>
+                    <table class="etable">
+                       <tr>
                           <th>Item ID</th>
                           <th>Item Name</th>
                           <th>Item Quantity</th>
@@ -54,12 +59,20 @@
 
                         </tr>
                         <tr>
-                          <td>0001</td>
-                          <td>Gray T-Shrt</td>
-                          <td>100</td>
-                          <td>$16.99</td>
+                          <td contenteditable="true">0001</td>
+                          <td contenteditable='true'>Gray T-Shirt</td>
+                          <td contenteditable="true">100</td>
+                          <td contenteditable="true">16.99</td>
                           
+                        </tr>
+                        <tr>
+                            <td contenteditable="true">0002</td>
+                            <td contenteditable='true'>Black T-Shirt</td>
+                            <td contenteditable="true">100</td>
+                            <td contenteditable="true">16.99</td>
                         </tr>
                       </table>
                 </div>
-        </div>
+         </div>
+  
+</body>               
