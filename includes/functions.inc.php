@@ -69,3 +69,21 @@ function createUser($conn, $email, $fullName, $pass){
 
     header("location: ../index.html?error=none");
 }
+
+function loginUser($conn, $logUserName, $logPassword){
+$sql = "SELECT * FROM test WHERE fullName=? AND password=?";
+$stmt = $conn->prepare($sql); 
+$stmt->bind_param("ss", $logUserName, $logPassword);
+$stmt->execute();
+$result = $stmt->get_result(); 
+$row = $result->fetch_assoc();
+if ($row['fullName'] === $logUserName && $row['password'] === $logPassword) {
+
+    echo "Logged in!";
+    exit();
+
+}
+else{
+    echo "whoopsie doopsiessss";
+}
+}

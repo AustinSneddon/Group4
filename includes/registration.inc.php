@@ -7,7 +7,9 @@ if(isset($_POST["submit"])){
     $password = $_POST['pass'];
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';
-    
+
+    createUser($conn, $email, $fullName, $password);
+    /*
     if(invalidEmail($email) == false) {
         header("location: ../login.html");
         exit();
@@ -23,9 +25,8 @@ if(isset($_POST["submit"])){
     else{
         createUser($conn, $email, $fullName, $password);
     }
-
-    
+    */
 }
 else{
-    header ('Location: ../login.html');
+    header ('Location: ../login.html?error=somethingFailed');
 }
