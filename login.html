@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="log-in-styles.css">
@@ -13,16 +13,16 @@
                 <button type="button" class="toggle-btn" onclick="login()">Login</button>
                 <button type="button" class="toggle-btn" onclick="register()">Register</button>
             </div>
-            <form id="login" class="inputGroup">
-                <input type="text" class="inputField" placeholder="Username" required>
-                <input type="text" class="inputField" placeholder="Password" required>
-                <button type="submit" class="submitButton">Login</button>
+            <form id="login" action="includes/login.inc.php" method="POST" class="inputGroup">
+                <input type="text" name="name" class="inputField" placeholder="Username" required>
+                <input type="password" name="pwd" class="inputField" placeholder="Password" required>
+                <button type="submit" name="submit" class="submitButton">Login</button>
             </form>
-            <form id="register" action="connect.php" method ="POST" class="inputGroup">
-                <input name="email" type="email" class="inputField" placeholder="Email" required>
-                <input name="fullName" type="text" class="inputField" placeholder="Username" required>
-                <input name="password" type="text" class="inputField" placeholder="Password" required>
-                <button type="submit" class="submitButton">Register</button>
+            <form id="register" action="includes/registration.inc.php" method ="POST" class="inputGroup">
+                <input type="text" name="email" class="inputField" placeholder="Email" required>
+                <input type="text" name="fullName" class="inputField" placeholder="Username" required>
+                <input type="password" name="pass" class="inputField" placeholder="Password" required>
+                <button type="submit" name="submit" class="submitButton">Register</button>
             </form>
         </div>
     </div>
@@ -42,5 +42,5 @@
             z.style.left = "110px";
         }
     </script>
-</body>
+    </body>
 </html>
