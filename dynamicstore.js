@@ -11,12 +11,12 @@ if (document.readyState == 'loading') {
 
 window.onload = function dt()
 {   console.log(window.location.href)
-    if(window.location.href == 'file:///C:/Users/iploe/Documents/Senior%20CIS/Group4-main-Admin-Build/Group4-main/cart.html')
+    if(window.location.href == 'cart.html')
     {
         productincartupdate()
     }
 
-    if (window.location.href == 'file:///C:/Users/iploe/Documents/Senior%20CIS/Group4-main-Admin-Build/Group4-main/checkout.html')
+    if (window.location.href == 'checkout.html')
     { 
         checkouttotalupdate()
     }
