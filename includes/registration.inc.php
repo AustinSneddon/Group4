@@ -7,25 +7,19 @@ if(isset($_POST["submit"])){
     $password = $_POST['pass'];
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';
-
-    createUser($conn, $email, $fullName, $password);
-    /*
-    if(invalidEmail($email) == false) {
-        header("location: ../login.html");
-        exit();
+    
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        header("location: ../login.html?error=invalidEmail"); 
+      }
+      else if (!checkUID($conn, $fullName)){
+        header("location: ../login.html?error=UIDtaken");
     }
-    else if(uidTaken($conn, $fullName) == false) {
-        header("location: ../login.html");
-        exit();
-    }
-    else if(emailTaken($conn, $email) == false) {
-        header("location: ../login.html");
-        exit();
+    else if(!checkEmail($conn, $email)){
+        header("location: ../login.html?error=emailTaken");
     }
     else{
-        createUser($conn, $email, $fullName, $password);
+            createUser($conn, $email, $fullName, $password);
     }
-    */
 }
 else{
     header ('Location: ../login.html?error=somethingFailed');

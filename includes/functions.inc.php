@@ -1,69 +1,46 @@
 <?php
-function invalidEmail($email){
-    $result = false;
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
-        $result = true;
-    }
-    return $result;
-}
-
-function uidTaken($conn, $fullName){
-    $sql = "SELECT * FROM test WHERE fullName = ?;";
-    $stmt = mysqli_stmt_init($conn);
-
-    if(!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../login.html");
-        exit();
-    }
-
-    mysqli_stmt_bind_param($stmt, "s", $fullName);
-    mysqli_stmt_execute($stmt);
-
-    $resultData = mysqli_stmt_get_result($stmt);
-
-    if ($row = mysqli_fetch_assoc($resultData)){
-        return $row;
-    }
+function checkEmail($conn, $email){
+    $check = true;
+    $sql = "SELECT * FROM test WHERE email=?";
+    $stmt = $conn->prepare($sql); 
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result(); 
+    $row = $result->fetch_assoc();
+    
+    if ($row['email'] === $email){
+            $check = false;
+            return $check;
+        }
     else{
-        $result = false;
-        return $result;
+        return $check;
     }
-    mysqli_stmt_close($stmt);
+    }
+function checkUID($conn, $fullName){
+$check = true;
+$sql = "SELECT * FROM test WHERE fullName=?";
+$stmt = $conn->prepare($sql); 
+$stmt->bind_param("s", $fullName);
+$stmt->execute();
+$result = $stmt->get_result(); 
+$row = $result->fetch_assoc();
+
+if ($row['fullName'] === $fullName){
+        $check = false;
+        return $check;
+    }
+else{
+    return $check;
 }
-
-function emailTaken($conn, $email){
-    $sql = "SELECT * FROM test WHERE email = ?;";
-    $stmt = mysqli_stmt_init($conn);
-
-    if(!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../login.html");
-        exit();
-    }
-
-    mysqli_stmt_bind_param($stmt, "s", $email);
-    mysqli_stmt_execute($stmt);
-
-    $resultData = mysqli_stmt_get_result($stmt);
-
-    if ($row = mysqli_fetch_assoc($resultData)){
-        return $row;
-    }
-    else{
-        $result = false;
-        return $result;
-    }
-    mysqli_stmt_close($stmt);
 }
 
 function createUser($conn, $email, $fullName, $pass){
     $sql = "INSERT INTO test (email, fullName, password) VALUES (?, ?, ?);";
-    $stmt = mysqli_stmt_init($conn);
-    if(!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../login.html");
-        exit();
-    }
+    $stmt = mysqli_stmt_init($conn, $sql);
 
-    mysqli_stmt_bind_param($stmt, "sss", $email, $fullName, $pass);
+    $hashedPwd = password_hash($pass, PASSWORD_DEFAULT);
+
+    mysqli_stmt_bind_param($stmt, "sss", $email, $fullName, $hashedPwd);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
@@ -71,19 +48,18 @@ function createUser($conn, $email, $fullName, $pass){
 }
 
 function loginUser($conn, $logUserName, $logPassword){
-$sql = "SELECT * FROM test WHERE fullName=? AND password=?";
+$sql = "SELECT * FROM test WHERE fullName=?";
 $stmt = $conn->prepare($sql); 
-$stmt->bind_param("ss", $logUserName, $logPassword);
+$stmt->bind_param("s", $logUserName);
 $stmt->execute();
 $result = $stmt->get_result(); 
 $row = $result->fetch_assoc();
-if ($row['fullName'] === $logUserName && $row['password'] === $logPassword) {
 
+if ($row['fullName'] === $logUserName && password_verify($logPassword, $row['password'])) {
     echo "Logged in!";
     exit();
-
 }
 else{
-    echo "whoopsie doopsiessss";
+    echo "Incorrect Username or Password";
 }
 }
