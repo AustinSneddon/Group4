@@ -35,8 +35,8 @@ else{
 }
 
 function createUser($conn, $email, $fullName, $pass){
-    $sql = "INSERT INTO test (email, fullName, password) VALUES (?, ?, ?);";
-    $stmt = mysqli_stmt_init($conn, $sql);
+    $sql = "INSERT INTO test (email, fullName, password) VALUES (?, ?, ?)";
+    $stmt = $conn->prepare($sql); 
 
     $hashedPwd = password_hash($pass, PASSWORD_DEFAULT);
 
